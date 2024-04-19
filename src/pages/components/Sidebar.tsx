@@ -1,7 +1,8 @@
 import { cn } from '@/utils/style';
 import Link from 'next/link';
 import { FC } from 'react';
-import { AiFillGithub, AiFillInstagram, AiOutlineClose } from 'react-icons/ai';
+import { AiFillGithub, AiFillInstagram } from 'react-icons/ai';
+import IconButton from './IconComponent';
 
 type SidebarProps = {
   isOpen: boolean;
@@ -31,12 +32,16 @@ const Sidebar: FC<SidebarProps> = ({ isOpen }) => {
         Web Development
       </Link>
       <div className="mt-10 flex items-center gap-4">
-        <Link href="/https://www.instagram.com/lcfc0202">
-          <AiFillInstagram className="h-6 w-6" />
-        </Link>
-        <Link href="/https://github.com/lsj0202">
-          <AiFillGithub className="h-6 w-6" />
-        </Link>
+        <IconButton
+          Icon={AiFillInstagram}
+          component={Link}
+          href="https://www.instagram.com/lcfc0202"
+        />
+        <IconButton
+          Icon={AiFillGithub}
+          component={Link}
+          href="https://github.com/lsj0202"
+        />
       </div>
     </div>
   );
